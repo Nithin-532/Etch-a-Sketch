@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  border: 2px solid burlywood;
+  height: 64vh;
+  width: 64vh;
+}
+
+.block {
+  border: 2px solid black;
+}
+
+
+.block:hover {
+  background-color: black;
+}
