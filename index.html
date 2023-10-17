@@ -9,7 +9,14 @@
 </head>
 <body>
   <h1>Etch-a-Sketch</h1>
+  <label for="value" name="value">Enter the size of grid (Should be between 1 and 100): </label>
+  <input type="number" min="0" max="100" placeholder="default = 16" id="input" onkeyup="if(this.value > 100) this.value = null;">
   <div class="grid">
   </div>
+  <!-- <div class="controls">
+    <button class="eraser">Eraser</button>
+    <button class="random">Random</button>
+    <button class="select">Select Color</button>
+  </div> -->
 </body>
 </html>
