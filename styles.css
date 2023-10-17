@@ -25,6 +25,7 @@ body {
   border: 2px solid burlywood;
   height: 64vh;
   width: 64vh;
+  box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.5);
 }
 
 .row {
@@ -35,8 +36,4 @@ body {
 .column {
   flex: 1;
   border: 1px solid black;
-}
-
-.column:hover {
-  background-color: aqua;
 }

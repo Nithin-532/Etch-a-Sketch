@@ -14,3 +14,13 @@ function makeDivs(n) {
 }
 
 makeDivs(16);
+
+function handleMouseOver(e) {
+  if (e.target.className == 'column') {
+    const column = e.target;
+    column.style.backgroundColor = 'black';
+    e.stopPropagation();
+  }
+}
+
+grid.addEventListener('mouseover', handleMouseOver);
