@@ -1,10 +1,15 @@
 const grid = document.querySelector('.grid');
 
 function makeDivs(n) {
-  for (let i = 0; i < n * n; i++) {
-    const div = document.createElement('div');
-    div.classList.add('block');
-    grid.appendChild(div);
+  for (let i = 0; i < n; i++) {
+    const divRow = document.createElement('div');
+    for (let j = 0; j < n; j++) {
+      const divCol = document.createElement('div');
+      divCol.classList.add('column')
+      divRow.appendChild(divCol);
+    }
+    divRow.classList.add('row');
+    grid.appendChild(divRow);
   }
 }
 

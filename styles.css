@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -5,19 +9,34 @@ body {
   align-items: center;
 }
 
+/* with grid 
 .grid {
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  height: 64vh;
+  width: 64vh;
+}
+*/
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   border: 2px solid burlywood;
   height: 64vh;
   width: 64vh;
 }
 
-.block {
-  border: 2px solid black;
+.row {
+  display: flex;
+  flex: 1;
 }
 
+.column {
+  flex: 1;
+  border: 1px solid black;
+}
 
-.block:hover {
-  background-color: black;
+.column:hover {
+  background-color: aqua;
 }
