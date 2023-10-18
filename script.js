@@ -1,4 +1,13 @@
+const DEFAULT_MODE = '#eee';
+
+let currentColor = DEFAULT_MODE;
+
 const grid = document.querySelector('.grid');
+
+function setColor(color) {
+  currentColor = color;
+  console.log(currentColor);
+}
 
 function makeDivs(e) {
   const n = e.target.value;
@@ -21,7 +30,7 @@ function makeDivs(e) {
 const input = document.querySelector('#input');
 input.addEventListener('change', makeDivs);
 
-// const eraser = document.querySelector('.eraser');
+
 
 function random(min, max) {
   min = Math.ceil(min);
@@ -34,8 +43,23 @@ function colorCol(e) {
   const g = random(0, 255);
   const b = random(0, 255);
   const div = e.target;
-  div.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  if (currentColor === 'random') {
+    div.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  } else {
+    div.style.backgroundColor = currentColor;
+  }
 }
+
+const eraser = document.querySelector('.eraser');
+eraser.addEventListener('click', (() => {setColor('white')}));
+
+const randomColor = document.querySelector('.random');
+randomColor.addEventListener('click', (() => {setColor('random')}));
+
+const select = document.querySelector('#select');
+select.addEventListener('input', ((e) => {
+  setColor(e.target.value);
+}));
 
 function sketch() {
   const column = document.querySelectorAll('.column');
