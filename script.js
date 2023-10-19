@@ -1,16 +1,25 @@
-const DEFAULT_MODE = '#eee';
+const DEFAULT_MODE = '#000';
+const DEFAULT_SIZE = 16;
 
 let currentColor = DEFAULT_MODE;
+let currentSize = DEFAULT_SIZE;
 
 const grid = document.querySelector('.grid');
+
+function changeSize(size) {
+  currentSize = size;
+  makeDivs();
+}
+
+makeDivs();
 
 function setColor(color) {
   currentColor = color;
   console.log(currentColor);
 }
 
-function makeDivs(e) {
-  const n = e.target.value;
+function makeDivs() {
+  const n = currentSize;
   while (grid.firstChild) {
     grid.removeChild(grid.firstChild);
   }
@@ -22,13 +31,19 @@ function makeDivs(e) {
       divRow.appendChild(divCol);
     }
     divRow.classList.add('row');
+    divRow.style.display = 'grid';
+    divRow.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
     grid.appendChild(divRow);
   }
+  grid.style.gridTemplateRows = `repeat(${n}, 1fr)`;
   sketch();
 }
 
 const input = document.querySelector('#input');
-input.addEventListener('change', makeDivs);
+input.addEventListener('change', ((e) => {
+  console.log(e.target);
+  changeSize(e.target.value);
+}));
 
 
 

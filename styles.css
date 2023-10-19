@@ -25,16 +25,17 @@ body {
   margin: 0;
 }
 
-/* with grid 
+/* with grid  */
 .grid {
   display: grid;
-  grid-template-rows: repeat(16, 1fr);
+  border: 2px solid burlywood;
+  box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.5);
   height: 64vh;
   width: 64vh;
 }
-*/
 
-.grid {
+
+/* .grid {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -52,18 +53,12 @@ body {
 
 .column {
   flex: 1;
-}
+} */
 
 #input {
   margin: 20px;
   width: 200px;
 }
-
-
-/* .slidecontainer {
-  margin-top: 2em;
-} */
-
 
 .controls {
   display: flex;
@@ -104,6 +99,14 @@ body {
 #select::-moz-color-swatch {
   border-radius: 15px;
   border: none;
+}
+
+button:hover, #select:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  padding: 0.75rem 1.25rem;
 }
 
 @media (max-width: 500px) {
